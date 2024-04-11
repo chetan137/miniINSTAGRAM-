@@ -1,12 +1,15 @@
-
-
 const mongoose = require('mongoose');
-
+const MONGODB_URI = process.env.MONGODB_URI
 const connect = async () => {
   try {
-    await mongoose.connect('mongodb://127.0.0.1:27017/my_instagram_db', {
+
+  const uri = 'mongodb+srv://chetanshende1111:4u3Zeg8nPBqs673i@cluster1.lz4kreq.mongodb.net/?retryWrites=true&w=majority&appName=Cluster1';
+    await mongoose.connect(uri, {
       useNewUrlParser: true,
-      useUnifiedTopology: true,
+  useUnifiedTopology: true,
+
+
+
     });
     console.log('MongoDB connected');
   } catch (error) {
